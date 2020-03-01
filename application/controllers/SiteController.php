@@ -25,7 +25,7 @@ class SiteController extends Controller
                     ];
                 usort($tasks, function ($comparator, $compared)
                 {
-                    return  strcmp($comparator->{$this->output['orderByAscending']}, $compared->{$this->output['orderByAscending']});
+                    return  strcasecmp($comparator->{$this->output['orderByAscending']}, $compared->{$this->output['orderByAscending']});
                 });
             }
             if(array_key_exists('orderByDescending', $this->output) && is_string($this->output['orderByDescending']))
@@ -37,7 +37,7 @@ class SiteController extends Controller
                     ];
                 usort($tasks, function ($comparator, $compared)
                 {
-                    return strcmp($compared->{$this->output['orderByDescending']}, $comparator->{$this->output['orderByDescending']});
+                    return strcasecmp($compared->{$this->output['orderByDescending']}, $comparator->{$this->output['orderByDescending']});
                 });
             }
         }
