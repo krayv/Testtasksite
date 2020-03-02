@@ -15,7 +15,6 @@ class TaskController extends Controller
         $errors =
             [
                 'errors' => [],
-                'message'=> []
             ];
         if(empty($this->output) || !array_key_exists('id', $this->output) || $this->output['id'] == null || !Task::isTaskExist($this->output['id']))
         {
@@ -23,11 +22,15 @@ class TaskController extends Controller
         }
         if(isset($this->output['isNew']))
         {
-            $errors['message']['new'] = "Задание создано";
+            echo '<script language="javascript">';
+            echo 'alert("Задание создано")';
+            echo '</script>';
         }
         if(isset($this->output['isSaved']))
         {
-            $errors['message']['saved'] = "Сохранено";
+            echo '<script language="javascript">';
+            echo 'alert("Сохранено")';
+            echo '</script>';
         }
         $task = new Task();
         $task->load($this->output['id']);

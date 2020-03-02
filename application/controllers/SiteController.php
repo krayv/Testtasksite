@@ -16,7 +16,7 @@ class SiteController extends Controller
         ];
         if(!empty($this->output))
         {
-            if(array_key_exists('orderByAscending', $this->output) && is_string($this->output['orderByAscending']) && array_key_exists($this->output['orderByAscending'], get_object_vars(new Task())))
+            if(array_key_exists('orderByAscending', $this->output) && is_string($this->output['orderByAscending']))
             {
                 $argc['sorted'] =  [
                         'typeOrder' => 'orderByAscending',

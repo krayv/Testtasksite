@@ -24,8 +24,8 @@ class Router
         $uri = trim($_SERVER['REQUEST_URI'], '/');
         if(strstr($uri, "?"))
         {
-            $this->id = substr(strstr($uri, "?"), 1);
-            parse_str($this->id,$output);
+            $params = substr(strstr($uri, "?"), 1);
+            parse_str($params,$output);
             $this->output = $output;
             $uri = trim(strstr($uri, "?", -1), '/');
         }

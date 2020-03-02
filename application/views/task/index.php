@@ -32,13 +32,3 @@
         </div>
     </div>
 </div>
-<?php if(array_key_exists('new',$message) && $message['new'] != null):?>
-    <script language="javascript">
-        alert('Задание создано')
-    </script>
-<?php endif;?>
-<?php if(array_key_exists('saved',$message) && $message['saved'] != null):?>
-    <script language="javascript">
-        alert('Изменения сохранены')
-    </script>
-<?php endif;?>
